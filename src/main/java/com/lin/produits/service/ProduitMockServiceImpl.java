@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 @Service
 public class ProduitMockServiceImpl implements IproduitService {
-    List<Produit> produits;
+   static List<Produit> produits;
 
 
 
@@ -18,6 +18,7 @@ public class ProduitMockServiceImpl implements IproduitService {
     }
     @Override
     public List<Produit> getProduit() {
+
         return produits;
     }
 

@@ -9,11 +9,11 @@ import java.util.List;
 
 @RestController
 @CrossOrigin("*")
-
+@RequestMapping("/api/produit")
 public class ProduitController {
     @Autowired
     IproduitService produitService;
-    @RequestMapping("/api/produit")
+
     @GetMapping
     public List<Produit> getProduit(){
         return produitService.getProduit();
