@@ -1,0 +1,36 @@
+package com.lin.produits.controller;
+
+import com.lin.produits.entity.Produit;
+import com.lin.produits.service.IproduitService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@CrossOrigin("*")
+
+public class ProduitController {
+    @Autowired
+    IproduitService produitService;
+    @RequestMapping("/api/produit")
+    @GetMapping
+    public List<Produit> getProduit(){
+        return produitService.getProduit();
+    }
+
+    @PostMapping
+    public void addProduit(@RequestBody Produit produit){
+        produitService.addProduit(produit);
+    }
+
+    @PutMapping
+    public void updateProduit(@RequestBody Produit produit){
+        produitService.updateProduit(produit);
+    }
+
+    @DeleteMapping("/{ref}")
+    public void deleteProduit(@PathVariable String ref){
+        produitService.deleteProduit(ref);
+    }
+}
